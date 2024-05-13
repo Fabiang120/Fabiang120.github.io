@@ -1,7 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authorize App</title>
+    <script>
+        function redirectToAuthorization() {
+            // Construct the OAuth authorization URI
+            var authorizationUri = "https://sellercentral.amazon.com/apps/authorize/consent?application_id=amzn1.sp.solution.0bcb0255-439d-4318-b929-e9d8a01ac065&version=beta";
+            
+            // Redirect the user to the authorization URI
+            window.location.href = authorizationUri;
+        }
+    </script>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <!-- Create an "Authorize" button that calls the redirectToAuthorization function when clicked -->
+    <button onclick="redirectToAuthorization()">Authorize</button>
 </body>
 </html>
