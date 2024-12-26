@@ -1,0 +1,67 @@
+.home-container{
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    max-width: 800px;
+    padding:20px;
+}
+
+.home-header{
+    text-align:center;
+    margin-bottom: 20px;
+}
+
+.home-header h1{
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.home-header p{
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+.home-links{
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.links-container{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.home-link {
+    margin: 0 10px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.home-link.linkedin {
+    color: #0e76a8;
+}
+
+.home-link.linkedin:hover {
+    color: #0645ad;
+}
+
+.home-link.github {
+    color: #333;
+}
+
+.home-link.github:hover {
+    color: #555;
+}
+
+.home-link.amazon {
+    color: #FF9900;
+}
+
+.home-link.amazon:hover {
+    color: #d68100;
+}
+
+
