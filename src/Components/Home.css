@@ -136,8 +136,8 @@
 }
 
 .Projects{
-    background-color: #f4f4f4;
-    margin-bottom: 30px;
+    margin: 30px;
+    background-color: #f4f4f4;;
 }
 
 .Projects h5 {
@@ -167,6 +167,7 @@
 }
 
 .Skills{
+    margin: 30px;
     background-color: #f4f4f4;
     padding: 20px;
     border-radius: 5px;
