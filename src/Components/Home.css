@@ -10,15 +10,22 @@
     margin-bottom: 20px;
 }
 
-.home-header h1{
+.home-header h1 {
     font-size: 2.5rem;
-    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #4caf50, #0e76a8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
-.home-header p{
+.home-header p {
     font-size: 1rem;
     color: #555;
-    margin: 10px 0;
+    margin: 15px 0;
+    line-height: 1.6;
 }
 
 .home-links{
@@ -31,37 +38,51 @@
 .links-container{
     text-align: center;
     margin-top: 20px;
+    gap: 20px;
+    justify-content: center;
 }
 
 .home-link {
     margin: 0 10px;
     font-size: 18px;
     text-decoration: none;
-    transition: color 0.3s;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: color 0.3s ease-in-out;
 }
 
 .home-link.linkedin {
     color: #0e76a8;
+    border-color: #0e76a8;
 }
 
 .home-link.linkedin:hover {
-    color: #0645ad;
+    background-color: #0e76a8;
+    color: #fff;
+    transform: scale(1.1);
 }
 
 .home-link.github {
     color: #333;
+    border-color: #333;
 }
 
 .home-link.github:hover {
-    color: #555;
+    background-color: #333;
+    color: #fff;
+    transform: scale(1.1);
 }
 
 .home-link.amazon {
     color: #FF9900;
+    border-color: #FF9900;
 }
 
 .home-link.amazon:hover {
-    color: #d68100;
+    background-color: #FF9900;
+    color: #fff;
+    transform: scale(1.1);
 }
 
 
@@ -69,7 +90,100 @@
 .about-me{
     margin:30px;
     padding:20px;
-    background: color #f9f9f9;
+    background-color: #f9f9f9;
     border-radius: 5px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about-me h2{
+    text-align: center;
+    color: #4caf50;
+    font-size: 1.8rem;
+}
+
+.about-me p{
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Education Section */
+
+.Education{
+    text-align:center;
+    background-color: #f9f9f9;
+    padding:20px;
+    margin: 30px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+}
+
+.Education h3{
+    font-size: 1.8rem;
+    /* maybe change color */
+    color: #4caf50;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.Education p{
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.Education p strong{
+    color: #0e76a8;
+}
+
+.Projects{
+    background-color: #f4f4f4;
+    margin-bottom: 30px;
+}
+
+.Projects h5 {
+    font-size: 1.8rem;
+    color: #4caf50;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-grid p {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-grid p:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.Skills{
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.Skills h6{
+    font-size: 1.8rem;
+    color: #4caf50;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.Skills p{
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: center;
 }

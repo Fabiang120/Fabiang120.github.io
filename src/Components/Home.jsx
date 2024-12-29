@@ -58,34 +58,26 @@ function Home(){
                     <p>Honors: Dean’s List (Fall 2022, Summer 2023, Spring 2024, Fall 2024)</p>
                 </p>
             </section>
-            <section className="Work Experience">
-                <h4>Work Experience</h4>
-                <p>
-                    Owner of Fabian’s General Corner LLC March 2023- Present               
-                    <p>Retail Business on Amazon</p>
-                    <p> • Personally sourced and sold over $20,000 worth of products, managing over 2,000 individual sales </p>
-                    <p> • Directly negotiated with businesses and brands to secure deals and expand inventory</p>
-                    <p> • Expanded the business to operate successfully in all 50 states across the U.S</p> 
-                </p>
-            </section>
             <section className="Projects">
                 <h5>Projects</h5>
-                <p>
-                    Sourcing Optimizer Application (C++) March 2024- Present               
-                    <p> • Extracts data from Excel sheets and uses Amazon’s API to compare market prices against filters</p>
-                    <p> • Implements multithreading, async HTTP requests, and cryptography with cpprest, OpenSSL, xlnt.</p>
-                    <p> • Developed a web-based file upload system using HTML, JavaScript, and a local server with CORS header validation</p>
-                </p>
-                <p>
-                    Criminal Facial Recognition Application (Python) February 2024 
-                    <p> • Developed a facial recognition system that enhances image resolution using machine learning</p>
-                    <p> • Utilized OpenCV and eigenvalue-based algorithms for image upscaling and facial recognition</p>
-                </p>
-                <p>
-                    US Camp Route Optimizer (3 team members, C++) December 2023
-                    <p> • Optimizes US camping route planning based on user preferences, integrating distance thresholds and amenities</p>
-                    <p> • Implements Dijkstra’s Algorithm and A* Search for efficient route calculation</p>
-                </p>
+                <div className="project-grid">
+                    <p>
+                        Sourcing Optimizer Application (C++) March 2024- Present
+                        <p> • Extracts data from Excel sheets and uses Amazon’s API to compare market prices against filters</p>
+                        <p> • Implements multithreading, async HTTP requests, and cryptography with cpprest, OpenSSL, xlnt.</p>
+                        <p> • Developed a web-based file upload system using HTML, JavaScript, and a local server with CORS header validation</p>
+                    </p>
+                    <p>
+                        Criminal Facial Recognition Application (Python) February 2024
+                        <p> • Developed a facial recognition system that enhances image resolution using machine learning</p>
+                        <p> • Utilized OpenCV and eigenvalue-based algorithms for image upscaling and facial recognition</p>
+                    </p>
+                    <p>
+                        US Camp Route Optimizer (3 team members, C++) December 2023
+                        <p> • Optimizes US camping route planning based on user preferences, integrating distance thresholds and amenities</p>
+                        <p> • Implements Dijkstra’s Algorithm and A* Search for efficient route calculation</p>
+                    </p>
+                </div>
             </section>
             <section className="Skills">
                 <h6>Skills</h6>
