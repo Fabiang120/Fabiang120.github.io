@@ -1,12 +1,14 @@
 import React from 'react';
 import './Home.css';
+import linkedin from 'C:/Users/Owner/Desktop/Website/fabiang120.github.io/src/Components/Pictures/website picture.jpg';
 
 function Home(){
     return(
         <div className="home-contianer">
             <header className="home-header">
+                <img src={linkedin} alt="Your Description" className="top-right-image" />
                 <h1> Welcome To My Website</h1>
-                <p>Fabian Garcia| 786-317-4619| garciafabian@ufl.edu| sales@fabiansgeneralcorner.com</p>    
+                <p>Fabian Garcia | 786-317-4619 | garciafabian@ufl.edu | sales@fabiansgeneralcorner.com </p>    
             </header>
             <section className="links-container">
             <a
@@ -35,7 +37,7 @@ function Home(){
             </a>
             </section>
             <section className="about-me">
-                <h2>About Me</h2>
+                <h1>About Me</h1>
                 <p>
                     A large part of my identity is rooted in my Cuban heritage and the sacrifices my parents made
                     to provide me with the opportunities I have today. Their perseverance and dedication have always
@@ -49,7 +51,7 @@ function Home(){
                 </p>
             </section>
             <section className="Education">
-                <h3>Education</h3>
+                <h1>Education</h1>
                 <p>
                     University of Florida, Bachelor’s in Computer Science Expected Graduation: May 2026
                     <p>Cumulative GPA: 3.40</p>
@@ -59,7 +61,7 @@ function Home(){
                 </p>
             </section>
             <section className="Projects">
-                <h5>Projects</h5>
+                <h1>Projects</h1>
                 <div className="project-grid">
                     <p>
                         Sourcing Optimizer Application (C++) March 2024- Present
@@ -80,25 +82,68 @@ function Home(){
                 </div>
             </section>
             <section className="Skills">
-                <h6>Skills</h6>
+                <h1>Skills</h1>
                 <p>• Programming Languages: C++ (2 years), Python (3 years), Lua (1 year), C ({'>'}1 year), Java Script ({'>'}1 year), HTML ({'>'}1 year)</p>
                 <p>• Frameworks / Libraries: Google test, Fuse, CppRestSDK, OpenSSL, xlnt, Scikit-Learn, OpenCV, Keras, TensorFlow, Matplotlib.</p>
                 <p>• Tools and Databases: Amazon Seller Api, AWS Tools, Git, GitHub, Jupyter Notebook, Roblox Studio, Valgrind</p>
                 <p>• Languages: English (Native), Spanish (Native)</p>
                 <p>• Certifications: Microsoft Office Specialist: Word, Excel, and PowerPoint.</p>
             </section>
+            <section className="timeline-section">
+                <h1>Business Timeline</h1>
+                <div className="timeline">
+                    <div className="timeline-item">
+                        <div className="timeline-bubble" onClick={() => alert('April 2023: Business Founded')}>
+                            <span>Apr 2023</span>
+                        </div>
+                        <p>Business Founded</p>
+                    </div>
+                    <div className="timeline-item">
+                        <div className="timeline-bubble" onClick={() => alert('June 2023: LLC Founded')}>
+                            <span>Jun 2023</span>
+                        </div>
+                        <p>LLC Founded</p>
+                    </div>
+                    <div className="timeline-item">
+                        <div className="timeline-bubble" onClick={() => alert('July 2023: Sold in All 50 States')}>
+                            <span>Jul 2023</span>
+                        </div>
+                        <p>Sold in All 50 States</p>
+                    </div>
+                    <div className="timeline-item">
+                        <div className="timeline-bubble" onClick={() => alert('September 2023: First $5000 in Sales')}>
+                            <span>Sep 2023</span>
+                        </div>
+                        <p>First $5000 in Sales</p>
+                    </div>
+                    <div className="timeline-item">
+                        <div className="timeline-bubble" onClick={() => alert('April 2024: Reached 1000 Product Sales')}>
+                            <span>Apr 2024</span>
+                        </div>
+                        <p>1000 Product Sales</p>
+                    </div>
+                    <div className="timeline-item">
+                        <div className="timeline-bubble" onClick={() => alert('September 2024: Reached 2000 Product Sales')}>
+                            <span>Sep 2024</span>
+                        </div>
+                        <p>2000 Product Sales</p>
+                    </div>
+                    <div className="timeline-item">
+                        <div className="timeline-bubble" onClick={() => alert('October 2024: Reached $20000 in Sales')}>
+                            <span>Oct 2024</span>
+                        </div>
+                        <p>$20000 in Sales</p>
+                    </div>
+                </div>
+            </section>
         </div>
-
-        // Display my Name bold //
-        // Then my phone and school email, personal and sales //
-        // Then my links//
-
-        // Then I want an about me section//
-
-        // Dashboard section//
-        // This is education, skills, projects and certifications //
-        
-        // Business Timeline //
+       // Founded in April 2023 //
+       // June 2023 LLC Founded //
+       // first $5000 sales was in september 2023 //
+       // Reached 1000 product sales April 2024 //
+       // Sold in all 50 states in July 2023 //
+       // Reached $20000 sales in Oct 2024 //
+       // Reached 2000 product sales Sep 2024 //
     );
 }
 

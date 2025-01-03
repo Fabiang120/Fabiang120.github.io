@@ -1,12 +1,33 @@
-.home-container{
+body {
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    margin: 0 auto;
-    max-width: 800px;
-    padding:20px;
 }
 
-.home-header{
-    text-align:center;
+.home-container {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    background: linear-gradient(145deg, #242424, #1f1f1f);
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.top-right-image {
+    display: block;
+    margin: 20px auto;
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    object-fit: cover;
+}
+
+.home-header {
+    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -23,125 +44,112 @@
 
 .home-header p {
     font-size: 1rem;
-    color: #555;
+    color: white;
     margin: 15px 0;
     line-height: 1.6;
 }
 
-.home-links{
-    text-align:center;
+.links-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
-}
-
-.links-container{
-    text-align: center;
-    margin-top: 20px;
-    gap: 20px;
-    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
 .home-link {
-    margin: 0 10px;
     font-size: 18px;
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 5px;
     border: 2px solid transparent;
-    transition: color 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(90deg, #444, #666);
+    color: white;
+    text-align: center;
+    width: 200px;
+    /* Ensures uniform button width */
 }
 
 .home-link.linkedin {
-    color: #0e76a8;
+    color: white;
     border-color: #0e76a8;
 }
 
 .home-link.linkedin:hover {
-    background-color: #0e76a8;
-    color: #fff;
-    transform: scale(1.1);
+    background: #0e76a8;
+    color: white;
 }
 
 .home-link.github {
-    color: #333;
     border-color: #333;
 }
 
 .home-link.github:hover {
-    background-color: #333;
-    color: #fff;
-    transform: scale(1.1);
+    background: #333;
+    color: white;
 }
 
 .home-link.amazon {
-    color: #FF9900;
-    border-color: #FF9900;
+    color: white;
+    border-color: #ff9900;
 }
 
 .home-link.amazon:hover {
-    background-color: #FF9900;
-    color: #fff;
-    transform: scale(1.1);
+    background: #ff9900;
+    color: white;
 }
 
-
-/* About Me Section */
-.about-me{
-    margin:30px;
-    padding:20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+.about-me {
+    margin: 30px;
+    padding: 20px;
+    background: linear-gradient(145deg, #252525, #1e1e1e);
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
 }
 
-.about-me h2{
+.about-me h1 {
     text-align: center;
     color: #4caf50;
-    font-size: 1.8rem;
+    font-size: 30px;
 }
 
-.about-me p{
+.about-me p {
     font-size: 1rem;
-    color: #555;
+    color: white;
     line-height: 1.6;
 }
 
-/* Education Section */
-
-.Education{
-    text-align:center;
-    background-color: #f9f9f9;
-    padding:20px;
+.Education {
+    text-align: center;
+    background: linear-gradient(145deg, #252525, #1e1e1e);
+    padding: 20px;
     margin: 30px;
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
 }
 
-.Education h3{
-    font-size: 1.8rem;
-    /* maybe change color */
+.Education h1 {
+    font-size: 30px;
     color: #4caf50;
     margin-bottom: 10px;
-    text-align: center;
 }
 
-.Education p{
+.Education p {
     font-size: 1rem;
-    color: #555;
+    color: white;
     line-height: 1.6;
 }
 
-.Education p strong{
-    color: #0e76a8;
-}
-
-.Projects{
+.Projects {
     margin: 30px;
-    background-color: #f4f4f4;;
+    padding: 20px;
+    background: linear-gradient(145deg, #252525, #1e1e1e);
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
 }
 
-.Projects h5 {
-    font-size: 1.8rem;
+.Projects h1 {
+    font-size: 30px;
     color: #4caf50;
     text-align: center;
     margin-bottom: 15px;
@@ -154,37 +162,89 @@
 }
 
 .project-grid p {
-    background-color: #f9f9f9;
+    background: rgb(54, 53, 53);
     padding: 15px;
     border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-grid p:hover {
     transform: translateY(-5px);
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-.Skills{
+.Skills {
     margin: 30px;
-    background-color: #f4f4f4;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+    background: linear-gradient(145deg, #252525, #1e1e1e);
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
 }
 
-.Skills h6{
-    font-size: 1.8rem;
+.Skills h1 {
+    font-size: 30px;
     color: #4caf50;
     text-align: center;
     margin-bottom: 15px;
 }
 
-.Skills p{
+.Skills p {
     font-size: 1rem;
-    color: #555;
+    color: white;
     line-height: 1.6;
     text-align: center;
+}
+
+.timeline-section {
+    margin: 30px;
+    padding: 20px;
+    background: linear-gradient(145deg, #252525, #1e1e1e);
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+.timeline-section h1{
+    font-size: 30px;
+    color: #4caf50;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.timeline-bubble {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #4caf50, #0e76a8);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.timeline-bubble:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.timeline-item p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: white;
 }
