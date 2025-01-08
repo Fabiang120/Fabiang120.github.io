@@ -21,7 +21,6 @@ body {
     margin: 20px auto;
     max-width: 200px;
     height: auto;
-    border-radius: 50%;
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
     object-fit: cover;
 }
@@ -67,7 +66,17 @@ body {
     color: white;
     text-align: center;
     width: 200px;
-    /* Ensures uniform button width */
+    max-width: 90%;
+    word-wrap: break-word;
+}
+
+@media (max-width: 455px) {
+    .home-link {
+        font-size: 14px !important;
+        padding: 8px 10px !important;
+        width: 85% !important;
+        max-width: 90% !important;
+    }
 }
 
 .home-link.linkedin {
