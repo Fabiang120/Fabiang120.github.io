@@ -16,13 +16,15 @@ import store from 'C:/Users/Owner/Desktop/Website/fabiang120.github.io/src/Compo
 import Hometown3DMap from './Hometown3DMap';
 import { Button, Typography } from '@mui/material';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from '@mui/lab';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function Home() {
     return (
-        <div className="home-container">
+        <div className="container-fluid p-0">
             <section className="about-me">
-                <div className="about-me-content">
-                    <div className="about-me-text">
+                <div className="row g-lg-6">
+                    <div className="col-12 col-lg-6 about-text">
                         <p>Hi, my name is</p>
                         <h1>Fabian Garcia</h1>
                         <p>I sell, code and talk to people.</p>
@@ -31,15 +33,48 @@ function Home() {
                             to.
                         </p>
                     </div>
-                    <div className="about-me-images">
-                        <img
-                            src={linkedin}
-                            alt="Fabian Garcia"
-                            className="about-me-image personal-image"
-                        />
-                        <img src={cuba1} alt="Cuban Heritage 1" className="about-me-image" />
-                        <img src={cuba2} alt="Cuban Heritage 2" className="about-me-image" />
-                        <img src={cuba3} alt="Cuban Heritage 3" className="about-me-image" />
+                    <div className="col-12 col-lg-6">
+                        <div className="row g-0">
+                            <div className="col-6">
+                                <div className="ratio ratio-1x1">
+                                    <img
+                                        src={linkedin}
+                                        alt="Fabian Garcia"
+                                        className="img-fluid object-fit-cover rounded about-me-image"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="col-6">
+                                <div className="ratio ratio-1x1">
+                                    <img
+                                        src={cuba1}
+                                        alt="Cuban Heritage 1"
+                                        className="img-fluid object-fit-cover rounded about-me-image"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="col-6">
+                                <div className="ratio ratio-1x1">
+                                    <img
+                                        src={cuba2}
+                                        alt="Cuban Heritage 2"
+                                        className="img-fluid object-fit-cover rounded about-me-image"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="col-6">
+                                <div className="ratio ratio-1x1">
+                                    <img
+                                        src={cuba3}
+                                        alt="Cuban Heritage 3"
+                                        className="img-fluid object-fit-cover rounded about-me-image"
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
