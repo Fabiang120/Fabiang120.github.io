@@ -73,13 +73,12 @@
 
 .about-me {
     background-color: #ff69b4;
-    padding: 5vh 10vw;
     color: #fff;
 }
 
-
 .about-text {
     font-size: 1.2rem;
+    min-width: 200px;
     line-height: 1.6;
 }
 
@@ -94,6 +93,23 @@
     color: #fff;
 }
 
+.image-grid{
+    min-width: 200px;
+}
+
+@media (max-width: 575px){
+    .about-me .image-grid {
+        max-width: 70%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .about-me .image-grid {
+        max-width: 70%;
+        margin-left: auto;
+        margin-right: 0;
+    }
+}
 
 .about-me-image.linkedin-image {
     border: 3px solid white;

@@ -21,64 +21,50 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Home() {
     return (
-        <div className="container-fluid p-0">
-            <section className="about-me">
-                <div className="row g-lg-6">
-                    <div className="col-12 col-lg-6 about-text">
-                        <p>Hi, my name is</p>
-                        <h1>Fabian Garcia</h1>
-                        <p>I sell, code and talk to people.</p>
-                        <p>
-                            Anyway, here is a picture of me and some Cuban things I relate
-                            to.
-                        </p>
-                    </div>
-                    <div className="col-12 col-lg-6">
-                        <div className="row g-0">
-                            <div className="col-6">
-                                <div className="ratio ratio-1x1">
-                                    <img
-                                        src={linkedin}
-                                        alt="Fabian Garcia"
-                                        className="img-fluid object-fit-cover rounded about-me-image"
-                                    />
-                                </div>
-                            </div>
+        <div className="container-fluid px-0">
+            <section className="about-me py-5">
+                <div className="container">
+                    <div className="row align-items-center">
+                        <div className="col-sm-7 about-text">
+                            <p className="fs-6 fs-lg-5">Hi, my name is</p>
+                            <h1 className="fs-1 fs-lg-2 fs-xl-1">Fabian Garcia</h1>
+                            <p className="fs-6 fs-lg-5">I sell, code and talk to people.</p>
+                            <p className="fs-6 fs-lg-5">
+                                Anyway, here is a picture of me and some Cuban things I relate to.
+                            </p>
+                        </div>
 
-                            <div className="col-6">
-                                <div className="ratio ratio-1x1">
-                                    <img
-                                        src={cuba1}
-                                        alt="Cuban Heritage 1"
-                                        className="img-fluid object-fit-cover rounded about-me-image"
-                                    />
+                        <div className="col-sm-5">
+                            <div className="row g-2 image-grid">
+                                <div className="col-6">
+                                    <div className="ratio ratio-1x1">
+                                        <img src={linkedin} className="img-fluid object-fit-cover rounded" />
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div className="col-6">
-                                <div className="ratio ratio-1x1">
-                                    <img
-                                        src={cuba2}
-                                        alt="Cuban Heritage 2"
-                                        className="img-fluid object-fit-cover rounded about-me-image"
-                                    />
+                                <div className="col-6">
+                                    <div className="ratio ratio-1x1">
+                                        <img src={cuba1} className="img-fluid object-fit-cover rounded" />
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div className="col-6">
-                                <div className="ratio ratio-1x1">
-                                    <img
-                                        src={cuba3}
-                                        alt="Cuban Heritage 3"
-                                        className="img-fluid object-fit-cover rounded about-me-image"
-                                    />
+                                <div className="col-6">
+                                    <div className="ratio ratio-1x1">
+                                        <img src={cuba2} className="img-fluid object-fit-cover rounded" />
+                                    </div>
+                                </div>
+
+                                <div className="col-6">
+                                    <div className="ratio ratio-1x1">
+                                        <img src={cuba3} className="img-fluid object-fit-cover rounded" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
-
             <section className="Education">
                 <div className="education-content">
                     <div className="education-text">
