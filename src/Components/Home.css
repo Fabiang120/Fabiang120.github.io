@@ -73,7 +73,6 @@
 
 .about-me {
     background-color: #ff69b4;
-    color: #fff;
 }
 
 .about-text {
@@ -117,31 +116,18 @@
 
 
 .Education {
-    overflow: hidden;
-    flex-wrap: wrap;
+    /* position relative is necessary for svg */
     position:relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #4682b4;
-    padding: 5vh 10vw;
+    padding: 5vh 0;
     color: #fff;
 }
 
 .education-content {
-    flex-wrap: wrap;
     margin-top: 20vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5%;
-    max-width: 1300px;
-    width: 100%;
 }
 
 .education-text {
-    flex: 1;
-    text-align: left;
     font-size: 1.2rem;
     line-height: 1.6;
 }
@@ -150,51 +136,23 @@
     text-align: left;
     font-size: 3rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 5%;
     color: #fff;
 }
 
 .education-text p {
-    margin: 10px 0;
     color: #f0f0f0;
 }
 
-.education-images {
-    margin-top: 15vh;
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
+.education-image-wrapper {
+    max-width: 100%;
 }
 
-.ferguson-image {
-    max-width: 30vh;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+@media (max-width: 575px) {
+    .education-image-wrapper {
+        max-width: 70%;
+    }
 }
-
-.uf-image {
-    max-width: 40vh;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.ferguson-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.uf-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
 
 .custom-shape-divider-top-1737780762 {
     position: absolute;
