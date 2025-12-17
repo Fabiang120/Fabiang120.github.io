@@ -271,60 +271,12 @@
 
 
 .timeline-section {
-    overflow: visible;
-    display:flex;
-    flex-direction: column;
     background: #9400D3;
     padding-top: 15vh;
     position: relative;
 }
 
-.timeline-content {
-    overflow: visible;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-}
 
-.timeline {
-    flex: 2;
-    min-width: 40%;
-    padding: 20px;
-}
-
-.timeline h1{
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #fff;
-
-}
-.timeline p {
-    color: white;
-}
-
-.timeline .MuiTypography-h6 {
-    font-size: 1.3rem;
-}
-
-.timeline .MuiTypography-body2 {
-    font-size: 0.8rem;
-}
-
-.MuiTimelineItem-root {
-    margin-bottom: 10px;
-}
-
-.timeline .MuiTimelineDot-root {
-    transform: scale(1.5);
-}
-
-.timeline .MuiTimelineConnector-root {
-    background-color: white;
-    height: 40px;
-}
 
 .custom-shape-divider-top-1737781375 {
     position: absolute;
@@ -345,44 +297,37 @@
 .custom-shape-divider-top-1737781375 .shape-fill {
     fill: #32CD32;
 }
-.image-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    flex: 1;
+
+.timeline-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #fff;
 }
 
-.work-image,
-.store-image {
-    max-width: 120%;
-    min-width: 25vh;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.timeline-section h6{
+    color:white;
 }
 
-.work-image:hover,
-.store-image:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
+.timeline-section body2{
+    color: #1e1e1e;
 }
+
+/* Map Section */
 
 .map-section {
+    position: relative;
     background-color: #555;
     width: 100%;
-    min-height: 100vh;
-    padding: 150px 0;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    position: relative;
-  }
+    padding: 20vh;
+}
+
+.map-section h1{
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 5%;
+}
 
   .custom-shape-divider-top-1761695006 {
     position: absolute;

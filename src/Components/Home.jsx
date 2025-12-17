@@ -147,11 +147,11 @@ function Home() {
                     </svg>
                 </div>
                 <div className="container">
-                    <div className="row align-items-center">
+                    <div className="row align-items-stretch">
                         <Typography variant="h1" align="center" gutterBottom>
                             Projects
                         </Typography>
-                        <div className="col-4">
+                        <div class="col-12 col-lg-4 g-4">
                             <div className="card">
                                 <img src={parting} className="card-img-top" alt="Parting Gifts" />
                                 <div className="card-body">
@@ -166,7 +166,7 @@ function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-4">
+                        <div class="col-12 col-lg-4 g-4">
                             <div className="card">
                                 <div className="card-body">
                                     <h3>Sourcing Optimizer Application (C++)</h3>
@@ -179,7 +179,7 @@ function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-4">
+                        <div class="col-12 col-lg-4 g-4">
                             <div className="card">
                                 <img src={vaul} className="card-img-top" alt="Vault" />
                                 <div className="card-body">
@@ -221,6 +221,8 @@ function Home() {
                     </div>
                 </div>
             </section>
+
+
             <section className="timeline-section">
                 <div className="custom-shape-divider-top-1737781375">
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -229,12 +231,13 @@ function Home() {
                         <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" className="shape-fill"></path>
                     </svg>
                 </div>
-                <div className="timeline-content">
-                    <div className="timeline">
-                        <Typography variant="h1" gutterBottom>
+                <div className="container">
+                    <div className="row align-items-center">
+                    <Typography variant="h1" gutterBottom>
                             Business Timeline
-                        </Typography>
-                        <Timeline position="alternate">
+                    </Typography>
+                        <div className="col-12 col-md-7">
+                            <Timeline position="alternate">
                             <TimelineItem>
                                 <TimelineSeparator>
                                     <TimelineDot sx={{ backgroundColor: "#084a8a;" }} />
@@ -305,10 +308,17 @@ function Home() {
                                 </TimelineContent>
                             </TimelineItem>
                         </Timeline>
-                    </div>
-                    <div className="image-container">
-                        <img src={work} alt="Work" className="work-image" />
-                        <img src={store} alt="Store" className="store-image" />
+                        </div>
+                        <div className="col-12 col-md-5">
+                            <div className="row g-4">
+                                <div className="col-12">
+                                    <img src={work} alt="Work" className="img-fluid object-fit-cover rounded" />
+                                </div>
+                                <div className="col-12">
+                                    <img src={store} alt="Store" className="img-fluid object-fit-cover rounded" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -320,7 +330,7 @@ function Home() {
                         <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
                     </svg>
                 </div>
-                <div className="MapHeader">
+                <div className="container">
                     <Typography variant="h1" align="center" gutterBottom>
                         My Hometown In 2D
                     </Typography>
