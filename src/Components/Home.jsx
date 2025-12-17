@@ -180,48 +180,28 @@ uploads, and search features.</li>
                 </div>
             </section>
             <section className="Skills">
-                <div className="Skills-content">
-                    <div className="Skills-text">
-                        <div class="custom-shape-divider-top-1737781070">
-                            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                                <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
-                            </svg>
-                        </div>
-                    <Typography variant="h1" align="center" gutterBottom>
-                        Skills
-                    </Typography>
-                    <p><strong>Programming Languages:</strong> C++, SQL, Java, Python, Swift, Go, Lua, C, JavaScript, HTML</p>
-                    <p><strong>Frameworks / Libraries / Technologies:</strong> Google Test, Fuse, CppRestSDK, OpenSSL, xlnt, Scikit Learn, OpenCV, Keras, TensorFlow, Matplotlib, React, Flask, HTML, CSS</p>
-                    <p><strong>Tools and Databases:</strong> Amazon Seller Api, AWS, Git, Valgrind</p>
-                    <p><strong>Languages:</strong> English (Native), Spanish (Native)</p>
-                    <p><strong>Certifications:</strong> Microsoft Office Specialist: Word, Excel, Power Point, Forklift Certification.</p>
-                    </div>
-                    <div className="Skills-images">
-                        <img
-                            src={Aws}
-                            alt="Aws"
-                            className="coding-image"
-                        />
-                        <img
-                            src={Python}
-                            alt="Python"
-                            className="coding-image"
-                        />
-                        <img
-                            src={C}
-                            alt="C"
-                            className="coding-image"
-                        />
-                        <img
-                            src={Html}
-                            alt="Html"
-                            className="coding-image"
-                        />
-                    </div>
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-12 col-lg-10 Skills-text">
+                            <div className="custom-shape-divider-top-1737781070">
+                                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                                    <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" className="shape-fill"></path>
+                                </svg>
+                            </div>
 
+                            <Typography variant="h1" align="center" gutterBottom className="fw-bold">
+                                Skills
+                            </Typography>
+
+                            <p><strong>Programming Languages:</strong> C++, SQL, Java, Python, Swift, Go, Lua, C, JavaScript, HTML</p>
+                            <p><strong>Frameworks / Libraries / Technologies:</strong> Google Test, Fuse, CppRestSDK, OpenSSL, xlnt, Scikit Learn, OpenCV, Keras, TensorFlow, Matplotlib, React, Flask, HTML, CSS</p>
+                            <p><strong>Tools and Databases:</strong> Amazon Seller Api, AWS, Git, Valgrind</p>
+                            <p><strong>Languages:</strong> English (Native), Spanish (Native)</p>
+                            <p><strong>Certifications:</strong> Microsoft Office Specialist: Word, Excel, Power Point, Forklift Certification.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
-
             <section className="timeline-section">
                 <div className="custom-shape-divider-top-1737781375">
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

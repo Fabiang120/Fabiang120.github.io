@@ -259,13 +259,12 @@
 
 
 .Skills {
-    overflow: visible;
     position: relative;
     background: #32CD32;
-    padding: 10vh 10vw;
+    padding-top: 20vh;
+    padding-bottom: 10vh;
     color: #fff;
 }
-
 .custom-shape-divider-top-1737781070 {
     position: absolute;
     top: 0;
@@ -286,23 +285,12 @@
     fill: #FFA500;
 }
 
-.Skills-content {
-    display: flex;
-    align-items: center; /* centers text vertically */
-    justify-content: center;
-    gap: 15%;
-    max-width: 1300px;
-    width: 100%;
-    margin: 0 auto;
-    min-height: 70vh; /* makes it taller and balanced */
-}
-
 .Skills-text {
     flex: 1.2;
-    text-align: left;
+    text-align: center;
     font-size: 1.2rem;
     line-height: 1.7;
-    color: #f0f0f0;
+    color: hsl(0, 0%, 94%);
 }
 
 .Skills-text h1 {
@@ -315,29 +303,6 @@
 .Skills-text p {
     margin: 15px 0;
 }
-
-.Skills-images {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 120px;
-}
-
-.coding-image {
-    width: 150px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.coding-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
 
 
 /* Timeline Section */
