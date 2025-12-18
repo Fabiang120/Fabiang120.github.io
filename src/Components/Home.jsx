@@ -26,8 +26,8 @@ function Home() {
         <div className="container-fluid px-0">
             <section className="about-me py-5">
                 <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-sm-7 about-text">
+                    <div className="row justify-content-center align-items-center">
+                        <div className="col-12 col-md-7 about-text text-center text-md-start">
                             <p className="fs-6 fs-lg-5">Hi, my name is</p>
                             <h1 className="fs-1 fs-lg-2 fs-xl-1">Fabian Garcia</h1>
                             <p className="fs-6 fs-lg-5">I sell, code and talk to people.</p>
@@ -36,7 +36,7 @@ function Home() {
                             </p>
                         </div>
 
-                        <div className="col-sm-5">
+                        <div className="col-12 col-md-5 about-text text-center text-md-start">
                             <div className="row g-2 image-grid">
                                 <div className="col-6">
                                     <div className="ratio ratio-1x1">
@@ -74,14 +74,12 @@ function Home() {
                         <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" className="shape-fill"></path>
                     </svg>
                 </div>
-                <div className="container education-content mx-auto">
-                    <div className="row align-items-center">
-
-                        <div className="col-sm-7 education-text">
-                            <Typography variant="h1" align="center" gutterBottom>
-                                Education
-                            </Typography>
-
+                <div className="container education-content">
+                    <Typography variant="h1" align="center" gutterBottom>
+                        Education
+                    </Typography>
+                    <div className="row justify-content-center align-items-center">
+                        <div className="col-12 col-md-7 education-text text-center text-md-start">
                             <p>
                                 University of Florida, Bachelor's in Computer Science<br />
                                 Expected Graduation: May 2026
@@ -102,26 +100,26 @@ function Home() {
                             </p>
                         </div>
 
-                        <div className="col-sm-5">
-                            <div className="row g-4">
-                                <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-5 text-center text-md-start">
+                            <div className="row justify-content-center g-4">
+                                <div className="col-12 col-lg-6">
                                     <div className="education-image-wrapper">
                                         <div className="ratio ratio-1x1">
                                             <img
                                                 src={Uf}
-                                                className="img-fluid object-fit-cover rounded"
+                                                className="img-fluid object-fit-cover rounded mx-auto d-block"
                                                 alt="University of Florida"
                                             />
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="col-12 col-md-6">
+                                <div className="col-12 col-lg-6">
                                     <div className="education-image-wrapper">
                                         <div className="ratio ratio-1x1">
                                             <img
                                                 src={Ferguson}
-                                                className="img-fluid object-fit-cover rounded"
+                                                className="img-fluid object-fit-cover rounded mx-auto d-block"
                                                 alt="John A Ferguson Senior HS"
                                             />
                                         </div>
@@ -201,7 +199,7 @@ function Home() {
             <section className="Skills">
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="col-12 col-lg-10 Skills-text">
+                        <div className="col-12 Skills-text">
                             <div className="custom-shape-divider-top-1737781070">
                                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                                     <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" className="shape-fill"></path>
