@@ -1,9 +1,13 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import styles from "./displacement-sphere.module.css";
+
+
 import {
     AmbientLight,
     DirectionalLight,
+    DirectionalLightHelper,
     LinearSRGBColorSpace,
     Mesh,
     MeshPhongMaterial,
@@ -23,28 +27,35 @@ export function DisplacementSphere() {
     const scene = useRef();
     const sphere = useRef();
     const uniforms = useRef();
+    const lastTime = useRef(performance.now());
     const start = useRef(Date.now());
 
     useEffect(() => {
+        scene.current = new Scene();
+
         const width = window.innerWidth;
-        const height = window.innerHeight;
+        const height = window.innerHeight
+        const adjustedHeight = height + height * 0.3;
+        // Remember to test the 100 hardclips anything the far value aka
+        camera.current = new PerspectiveCamera(54, width / height, 0.1, 100);
+        camera.current.position.z = 52;
 
         renderer.current = new WebGLRenderer({
             canvas: canvasRef.current,
+            // Not sure why alpha is here it doesnt seem to do anything
             alpha: true,
             powerPreference: "high-performance",
         });
 
-        renderer.current.setSize(width, height);
+        //Pixel Ratio is set to 1 to force 1 css pixel to 1 canvas pixel, makes less
         renderer.current.setPixelRatio(1);
+
+        renderer.current.setSize(width, adjustedHeight);
         renderer.current.outputColorSpace = LinearSRGBColorSpace;
 
-        camera.current = new PerspectiveCamera(54, width / height, 0.1, 100);
-        camera.current.position.z = 52;
-
-        scene.current = new Scene();
-
         const material = new MeshPhongMaterial();
+
+        
         material.onBeforeCompile = shader => {
             uniforms.current = UniformsUtils.merge([
                 shader.uniforms,
@@ -57,19 +68,31 @@ export function DisplacementSphere() {
 
         const geometry = new SphereGeometry(32, 128, 128);
         sphere.current = new Mesh(geometry, material);
+        sphere.current.position.set(25, 10, 0);
         scene.current.add(sphere.current);
 
-        scene.current.add(new AmbientLight(0xffffff, 0.8));
+        const ambientLight = new AmbientLight(0xffffff, 2.7);
+        scene.current.add(ambientLight);
+
         const light = new DirectionalLight(0xffffff, 1.5);
         light.position.set(100, 100, 200);
         scene.current.add(light);
 
+
         const animate = () => {
             requestAnimationFrame(animate);
+            // Uses position += velocity x timepassed
+            const now = performance.now();
+            const delta = (now - lastTime.current) * 0.001;
+            lastTime.current = now;
+
+            sphere.current.rotation.z += delta * 0.15;
+
             if (uniforms.current?.time) {
                 uniforms.current.time.value = 0.00005 * (Date.now() - start.current);
-              }
-            sphere.current.rotation.y += 0.002;
+            }
+              // Sphere rotating around y and camera is above in z axis
+            
             renderer.current.render(scene.current, camera.current);
         };
 
@@ -81,7 +104,8 @@ export function DisplacementSphere() {
     return (
         <canvas
             ref={canvasRef}
-            className="absolute inset-0 w-full h-full -z-10 pointer-events-none"
+            className={styles.canvas}
+            data-visible="true"
         />
-    );
+      );
 }

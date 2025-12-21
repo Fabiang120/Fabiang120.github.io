@@ -8,7 +8,7 @@ export default function IntroSection(){
         // We need a animated image in the back ground screen must be transparent
         // My name needs to be there 
         // Plus the text developer and + languages 
-        <div className="intro-section">
+        <div className="intro-section relative w-full border border-white">
             <DisplacementSphere />
             <h3 className="Inter">Fabian Garcia</h3>
             <h1>Developer</h1>

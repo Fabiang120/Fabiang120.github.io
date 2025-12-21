@@ -290,9 +290,17 @@ void main() {
 
 	#include <clipping_planes_fragment>
   // For rgb color convert each hexadecimal after spliting into three groups then divide by 255
-  vec3 baseColor = vec3(0.996, 0.427, 0.451) * 0.7;
-  baseColor += noise * 0.04;
-  vec4 diffuseColor = vec4(baseColor, 1.0);
+  vec3 color = vec3(vUv * (0.2 - 2.0 * noise), 1.0);
+
+  vec3 finalColors = vec3(
+    0.996 * color.b * 1.5,
+    0.427 * color.r,
+    0.451 * color.r
+  );
+
+vec4 diffuseColor = vec4(cos(finalColors * noise * 3.0), 1.0);
+
+  
   ReflectedLight reflectedLight = ReflectedLight(vec3(0.0), vec3(0.0), vec3(0.0), vec3(0.0));
   vec3 totalEmissiveRadiance = emissive;
 
