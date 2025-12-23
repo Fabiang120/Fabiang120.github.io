@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.69987fad.css",
-    "main.js": "/static/js/main.3f4df2d5.js",
+    "main.css": "/static/css/main.120bb14b.css",
+    "main.js": "/static/js/main.8e3728a6.js",
     "static/js/453.0a63fcff.chunk.js": "/static/js/453.0a63fcff.chunk.js",
     "static/media/vaul.png": "/static/media/vaul.1291442a60982e01766c.png",
     "static/media/Uf.webp": "/static/media/Uf.4f1846b3853d8760e31d.webp",
@@ -15,12 +15,12 @@
     "static/media/cuba1.jpg": "/static/media/cuba1.a1bd75c390f8533046f0.jpg",
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
-    "main.69987fad.css.map": "/static/css/main.69987fad.css.map",
-    "main.3f4df2d5.js.map": "/static/js/main.3f4df2d5.js.map",
+    "main.120bb14b.css.map": "/static/css/main.120bb14b.css.map",
+    "main.8e3728a6.js.map": "/static/js/main.8e3728a6.js.map",
     "453.0a63fcff.chunk.js.map": "/static/js/453.0a63fcff.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.69987fad.css",
-    "static/js/main.3f4df2d5.js"
+    "static/css/main.120bb14b.css",
+    "static/js/main.8e3728a6.js"
   ]
 }
