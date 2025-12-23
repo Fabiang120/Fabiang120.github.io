@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./displacement-sphere.module.css";
 
 
@@ -29,7 +29,13 @@ export function DisplacementSphere() {
     const uniforms = useRef();
     const lastTime = useRef(performance.now());
     const start = useRef(Date.now());
+    const [visible, setVisible] = useState(false);
 
+    useEffect(() => {
+        requestAnimationFrame(() => {
+            setVisible(true);
+        });
+    }, []);
     useEffect(() => {
         scene.current = new Scene();
 
@@ -54,12 +60,10 @@ export function DisplacementSphere() {
         renderer.current.outputColorSpace = LinearSRGBColorSpace;
 
         const material = new MeshPhongMaterial();
-
-        
         material.onBeforeCompile = shader => {
             uniforms.current = UniformsUtils.merge([
                 shader.uniforms,
-                { time: { value: 0 } },
+                { time: { type: 'f', value: 0 } },
             ]);
             shader.uniforms = uniforms.current;
             shader.vertexShader = vertexShader;
@@ -68,16 +72,16 @@ export function DisplacementSphere() {
 
         const geometry = new SphereGeometry(32, 128, 128);
         sphere.current = new Mesh(geometry, material);
-        sphere.current.position.set(25, 10, 0);
+        
+        // Gotta make sure sphere
+        sphere.current.position.set(23, 15, 0);
         scene.current.add(sphere.current);
-
+        const light = new DirectionalLight(0xffffff, 1.8);
         const ambientLight = new AmbientLight(0xffffff, 2.7);
         scene.current.add(ambientLight);
-
-        const light = new DirectionalLight(0xffffff, 1.5);
         light.position.set(100, 100, 200);
-        scene.current.add(light);
 
+        scene.current.add(light);
 
         const animate = () => {
             requestAnimationFrame(animate);
@@ -105,7 +109,7 @@ export function DisplacementSphere() {
         <canvas
             ref={canvasRef}
             className={styles.canvas}
-            data-visible="true"
+            data-visible={visible}
         />
       );
 }

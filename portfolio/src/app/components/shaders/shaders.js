@@ -287,53 +287,62 @@ varying float noise;
 #include <clipping_planes_pars_fragment>
 
 void main() {
+  #include <clipping_planes_fragment>
 
-	#include <clipping_planes_fragment>
-  // For rgb color convert each hexadecimal after spliting into three groups then divide by 255
-  vec3 color = vec3(vUv * (0.2 - 2.0 * noise), 1.0);
-
-  vec3 finalColors = vec3(
-    0.996 * color.b * 1.5,
-    0.427 * color.r,
-    0.451 * color.r
-  );
-
-vec4 diffuseColor = vec4(cos(finalColors * noise * 3.0), 1.0);
-
-  
-  ReflectedLight reflectedLight = ReflectedLight(vec3(0.0), vec3(0.0), vec3(0.0), vec3(0.0));
+  vec4 diffuseColor = vec4( diffuse, opacity );
+  ReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );
   vec3 totalEmissiveRadiance = emissive;
 
-	#include <logdepthbuf_fragment>
-	#include <map_fragment>
-	#include <color_fragment>
-	#include <alphamap_fragment>
-	#include <alphatest_fragment>
-	#include <alphahash_fragment>
-	#include <specularmap_fragment>
-	#include <normal_fragment_begin>
-	#include <normal_fragment_maps>
-	#include <emissivemap_fragment>
 
-	// accumulation
-	#include <lights_phong_fragment>
-	#include <lights_fragment_begin>
-	#include <lights_fragment_maps>
-	#include <lights_fragment_end>
+  vec3 colorBase = vec3(vUv * (0.2 - 2.0 * noise), 1.0);
+  vec3 finalColors = vec3(colorBase.r * 1.2, colorBase.g * 1.3, colorBase.b * 1.2);
+  vec3 wave = cos(finalColors * noise * 3.0);
 
-	// modulation
-	#include <aomap_fragment>
+  // 2. Balanced Coral Tint
+  // Red: 0.6 (Lowered from 0.7 to reduce mist)
+  // Green: 0.45 (Increased from 0.3 to turn red into peach/coral)
+  // Blue: 0.5 (Lowered from 0.7 to remove the purple/lavender haze)
+  vec3 coralTint = vec3(wave.r * 0.55, wave.g * 0.02, wave.b * 0.47);
 
-	vec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + reflectedLight.directSpecular + reflectedLight.indirectSpecular + totalEmissiveRadiance;
+  // 3. Apply to diffuse
+  diffuseColor.rgb = coralTint;
 
-	#include <envmap_fragment>
-	#include <opaque_fragment>
-	#include <tonemapping_fragment>
-	#include <colorspace_fragment>
-	#include <fog_fragment>
-	#include <premultiplied_alpha_fragment>
-	#include <dithering_fragment>
+ 
+  #include <logdepthbuf_fragment>
+  #include <map_fragment>
+  #include <color_fragment>
+  #include <alphamap_fragment>
+  #include <alphatest_fragment>
+  #include <alphahash_fragment>
+  #include <specularmap_fragment>
+  #include <normal_fragment_begin>
+  #include <normal_fragment_maps>
+  #include <emissivemap_fragment>
+  #include <lights_phong_fragment>
+  #include <lights_fragment_begin>
+  #include <lights_fragment_maps>
+  #include <lights_fragment_end>
+  #include <aomap_fragment>
 
-    gl_FragColor = vec4(outgoingLight, diffuseColor.a);
+
+  // We do this AFTER the lights_fragment chunks so reflectedLight exists
+  float peakMask = smoothstep(0.3, 0.5, noise);
+  vec3 whiteHighlight = vec3(peakMask * 2.5);
+
+  vec3 outgoingLight = reflectedLight.directDiffuse + 
+                       reflectedLight.indirectDiffuse + 
+                       reflectedLight.directSpecular + 
+                       reflectedLight.indirectSpecular + 
+                       totalEmissiveRadiance + whiteHighlight;
+
+  #include <envmap_fragment>
+  #include <opaque_fragment>
+  #include <tonemapping_fragment>
+  #include <colorspace_fragment>
+  #include <fog_fragment>
+  #include <premultiplied_alpha_fragment>
+  #include <dithering_fragment>
+
+  gl_FragColor = vec4(outgoingLight, diffuseColor.a);
 }
 `;
