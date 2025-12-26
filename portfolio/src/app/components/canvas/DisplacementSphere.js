@@ -70,59 +70,59 @@ export function DisplacementSphere() {
             shader.fragmentShader = fragmentShader;
         };
 
-        sphere.current = new Mesh(geometry, material        const geometry = new SphereGeometry(32, 128, 128);
-);
+        const geometry = new SphereGeometry(32, 128, 128);
+        sphere.current = new Mesh(geometry, material);
 
-    // Gotta make sure sphere
-    sphere.current.position.set(23, 15, 0);
-    scene.current.add(sphere.current);
-    const light = new DirectionalLight(0xffffff, 1.8);
-    const ambientLight = new AmbientLight(0xffffff, 2.7);
-    scene.current.add(ambientLight);
-    light.position.set(100, 100, 200);
+        // Gotta make sure sphere
+        sphere.current.position.set(23, 15, 0);
+        scene.current.add(sphere.current);
+        const light = new DirectionalLight(0xffffff, 1.8);
+        const ambientLight = new AmbientLight(0xffffff, 2.7);
+        scene.current.add(ambientLight);
+        light.position.set(100, 100, 200);
 
-    scene.current.add(light);
+        scene.current.add(light);
 
-    const animate = () => {
-        requestAnimationFrame(animate);
-        // Uses position += velocity x timepassed
-        const now = performance.now();
-        const delta = (now - lastTime.current) * 0.001;
-        lastTime.current = now;
+        const animate = () => {
+            requestAnimationFrame(animate);
+            // Uses position += velocity x timepassed
+            const now = performance.now();
+            const delta = (now - lastTime.current) * 0.001;
+            lastTime.current = now;
 
-        sphere.current.rotation.z += delta * 0.15;
+            sphere.current.rotation.z += delta * 0.15;
 
-        if (uniforms.current?.time) {
-            uniforms.current.time.value = 0.00005 * (Date.now() - start.current);
+            if (uniforms.current?.time) {
+                uniforms.current.time.value = 0.00005 * (Date.now() - start.current);
+            }
+            // Sphere rotating around y and camera is above in z axis
+
+            renderer.current.render(scene.current, camera.current);
+        };
+
+        animate();
+
+        const handleResize = () => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            const adjustedHeight = height + height * 0.3;
+            camera.current.aspect = width / height;
+            camera.current.updateProjectionMatrix();
+            renderer.current.setSize(width, adjustedHeight);
         }
-        // Sphere rotating around y and camera is above in z axis
+        window.addEventListener('resize', handleResize);
 
-        renderer.current.render(scene.current, camera.current);
-    };
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            renderer.current.dispose();
+        }
+    }, []);
 
-    animate();
-
-    const handleResize = () => {
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-        const adjustedHeight = height + height * 0.3;
-        camera.current.aspect = width / height;
-        camera.current.updateProjectionMatrix();
-        renderer.current.setSize(width, adjustedHeight);
-    }
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-        window.removeEventListener('resize', handleResize);
-        renderer.current.dispose();
-    }
-}, []);
-
-return (
-    <canvas
-        ref={canvasRef}
-        className={styles.canvas}
-        data-visible={visible}
-    />
-);
+    return (
+        <canvas
+            ref={canvasRef}
+            className={styles.canvas}
+            data-visible={visible}
+        />
+    );
 }
