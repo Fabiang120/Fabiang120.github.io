@@ -241,7 +241,7 @@ void main() {
   vUv = uv;
 
   noise = turbulence(0.01 * position + normal + time * 0.8);
-  vec3 displacement = vec3((position.x) * noise, position.y * noise, position.z * noise);
+  vec3 displacement = vec3((position.x) * noise * 1.2, position.y * noise * 1.2, position.z * noise * 1.2);
   gl_Position = projectionMatrix * modelViewMatrix * vec4((position + normal) + displacement, 1.0);
 }
 `;
@@ -298,10 +298,7 @@ void main() {
   vec3 finalColors = vec3(colorBase.r * 1.2, colorBase.g * 1.3, colorBase.b * 1.2);
   vec3 wave = cos(finalColors * noise * 3.0);
 
-  // 2. Balanced Coral Tint
-  // Red: 0.6 (Lowered from 0.7 to reduce mist)
-  // Green: 0.45 (Increased from 0.3 to turn red into peach/coral)
-  // Blue: 0.5 (Lowered from 0.7 to remove the purple/lavender haze)
+
   vec3 coralTint = vec3(wave.r * 0.55, wave.g * 0.02, wave.b * 0.47);
 
   // 3. Apply to diffuse
@@ -326,7 +323,7 @@ void main() {
 
 
   // We do this AFTER the lights_fragment chunks so reflectedLight exists
-  float peakMask = smoothstep(0.3, 0.5, noise);
+  float peakMask = smoothstep(0.2,0.3, noise);
   vec3 whiteHighlight = vec3(peakMask * 2.5);
 
   vec3 outgoingLight = reflectedLight.directDiffuse + 
