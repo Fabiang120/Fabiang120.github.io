@@ -8,11 +8,12 @@ export default function IntroSection() {
         // We need a animated image in the back ground screen must be transparent
         // My name needs to be there 
         // Plus the text developer and + languages 
-        <section className="intro-section border border-white">
+        <section className="intro-section border h-screen flex flex-col justify-center relative overflow-hidden border-white">
             <DisplacementSphere />
-            <h3 className="Inter">Fabian Garcia</h3>
-            <h1>Developer</h1>
+            <p className="Great-Vibes text-sm text-gray-400 uppercase"> Fabian Garcia </p>
+            <h1 className="text-7xl font-light mt-4">Full Stack Developer</h1>
             <h1>Languages: C++ Java JavaScript Python HTML/CSS React SQL TailWind Bootstrap Next Node.js</h1>
+            <div className="w-48 h-px bg-white mt-6"></div>
         </section>
     );
 }

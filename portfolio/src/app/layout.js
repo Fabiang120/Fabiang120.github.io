@@ -1,9 +1,10 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Inter, Great_Vibes } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+const greatVibes = Great_Vibes({ weight: "400", subsets: ["latin"], variable: "--font-signature" });
 
-export const metadata ={
+export const metadata = {
   title: "fabiansportfolio",
   description: "Fabian Garcia's Portfolio Website",
   author: "Fabian Garcia",
@@ -20,7 +21,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${greatVibes.variable}`}>
         {children}
       </body>
     </html>
